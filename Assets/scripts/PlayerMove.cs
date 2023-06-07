@@ -5,17 +5,14 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    private Transform playerTransform;
-
-    //animation
+    private Rigidbody2D rb;
     private Animator animator;
-    private bool isMoving;
+    private Vector2 movement;
 
-    private void Start()
+    private void Awake()
     {
-        playerTransform = transform;
+        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        isMoving = false;
     }
 
     private void Update()
@@ -23,29 +20,23 @@ public class PlayerMove : MonoBehaviour
         // Movement
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f);
-        playerTransform.position += movement * moveSpeed * Time.deltaTime;
-
-        
+        movement = new Vector2(moveHorizontal, moveVertical);
+        movement.Normalize();
 
         // Aiming
         Vector3 mousePosition = Input.mousePosition;
-        Vector3 screenPoint = Camera.main.WorldToScreenPoint(playerTransform.localPosition);
+        Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
         Vector2 aimDirection = (mousePosition - screenPoint).normalized;
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-        playerTransform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        // Check if there is any input for movement
-        if (moveHorizontal != 0f || moveVertical != 0f)
-        {
-            isMoving = true;
-        }
-        else
-        {
-            isMoving = false;
-        }
+        transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward); // Modify this line
 
         // Set the "isMoving" parameter in the Animator controller
-        animator.SetBool("isMoving", isMoving);
+        animator.SetBool("isMoving", movement.magnitude > 0f);
+    }
+
+    private void FixedUpdate()
+    {
+        // Apply movement using Rigidbody
+        rb.velocity = movement * moveSpeed;
     }
 }
