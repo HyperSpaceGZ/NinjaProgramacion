@@ -50,6 +50,7 @@ public class EnemyAI : MonoBehaviour
         if (hastriggered == false && collision.gameObject.tag == "Player")
         {
             hastriggered = true;
+            animator.SetBool("IsWalking", true);
             InvokeRepeating("EnemyFollowerMovement", 0f, 0.02f);
         }
     }
