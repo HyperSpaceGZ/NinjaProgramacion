@@ -60,4 +60,21 @@ public class EnemyAI : MonoBehaviour
         EnemyNavMesh.SetDestination(PlayerTransform.position);
     }
 
+    //private void NavMeshStart()
+    //{
+    //    //Gets the enemy navmesh and animator components 
+    //    EnemyNavMesh = GetComponent<NavMeshAgent>();
+    //    animator = GetComponentInChildren<Animator>();
+
+    //    //Fixes a bug where the sprite is in the wrong rotation
+    //    EnemyNavMesh.updateRotation = false;
+    //    EnemyNavMesh.updateUpAxis = false;
+
+    //    hastriggered = false;
+
+    //    //Gets the players transform for the navigation AI
+    //    PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+    //}
+    
+
 }
