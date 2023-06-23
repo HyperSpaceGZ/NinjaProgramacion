@@ -9,9 +9,9 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private NavMeshAgent EnemyNavMesh;
     [SerializeField] private bool hastriggered;
 
-    public Animator animator;
+    [SerializeField] protected Animator animator; 
 
-    public int enemyHP;
+    [SerializeField] protected int enemyHP;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,8 +24,10 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    
     private void EnemyFollowerMovement()
     {
+        //Set Enemy destionation to the player's position
         EnemyNavMesh.SetDestination(PlayerTransform.position);
     }
 

@@ -26,8 +26,7 @@ public class EnemySkeleton : EnemyAI
 
         if (collision.gameObject.tag == "Player")
         {
-            animator.SetBool("IsAttacking", true);
-            
+            animator.SetBool("IsAttacking", true);   
         }
     }
 
@@ -36,7 +35,6 @@ public class EnemySkeleton : EnemyAI
         if (collision.gameObject.tag == "Player")
         {
             animator.SetBool("IsAttacking", false);
-
         }
     }
 }
