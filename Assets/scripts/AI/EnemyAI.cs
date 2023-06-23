@@ -9,40 +9,9 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private NavMeshAgent EnemyNavMesh;
     [SerializeField] private bool hastriggered;
 
-    [SerializeField]  private Animator animator;
+    public Animator animator;
 
-    [SerializeField] private int enemyHP;
-
-
-    void FixedUpdate()
-    {
-
-    }
-
-    void Start()
-    {
-        //Gets the enemy navmesh and animator components 
-        EnemyNavMesh = GetComponent<NavMeshAgent>();
-        animator = GetComponentInChildren<Animator>();
-
-        //Fixes a bug where the sprite is in the wrong rotation
-        EnemyNavMesh.updateRotation = false;
-        EnemyNavMesh.updateUpAxis = false;
-
-        hastriggered = false;
-
-        //Gets the players transform for the navigation AI
-        PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //Collisions when is hits or hits the player
-        if (collision.gameObject.tag == "bullet")
-        {
-
-        }
-    }
+    public int enemyHP;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -60,21 +29,21 @@ public class EnemyAI : MonoBehaviour
         EnemyNavMesh.SetDestination(PlayerTransform.position);
     }
 
-    //private void NavMeshStart()
-    //{
-    //    //Gets the enemy navmesh and animator components 
-    //    EnemyNavMesh = GetComponent<NavMeshAgent>();
-    //    animator = GetComponentInChildren<Animator>();
+    public void NavMeshStart()
+    {
+        //Gets the enemy navmesh and animator components 
+        EnemyNavMesh = GetComponent<NavMeshAgent>();
+        animator = GetComponentInChildren<Animator>();
 
-    //    //Fixes a bug where the sprite is in the wrong rotation
-    //    EnemyNavMesh.updateRotation = false;
-    //    EnemyNavMesh.updateUpAxis = false;
+        //Fixes a bug where the sprite is in the wrong rotation
+        EnemyNavMesh.updateRotation = false;
+        EnemyNavMesh.updateUpAxis = false;
 
-    //    hastriggered = false;
+        hastriggered = false;
 
-    //    //Gets the players transform for the navigation AI
-    //    PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-    //}
+        //Gets the players transform for the navigation AI
+        PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+    }
     
 
 }
