@@ -29,7 +29,7 @@ public class EnemyMonster : EnemyAI
         {
             hastriggered = true;
             InvokeRepeating("GuardianAttack", 1f, 2.5f);
-            InvokeRepeating("GuardianAttackAnimationExit", 1.5f, 2.8f);
+            InvokeRepeating("GuardianAttackAnimationExit", 1.5f, 2.5f);
             InvokeRepeating("EnemyFollowerMovement", 0f, 0.02f);
         }
     }
