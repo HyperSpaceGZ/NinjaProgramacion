@@ -11,6 +11,9 @@ TagManager:
   - s3
   - s4
   - EnemyMonsterAttack
+  - bullet
+  - enemybullet
+  - wall
   layers:
   - Default
   - TransparentFX

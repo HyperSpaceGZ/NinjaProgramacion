@@ -45,4 +45,22 @@ public class shooting : MonoBehaviour
 
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(this.gameObject);
+        }
+
+        if (collision.gameObject.tag == "EnemyElite")
+        {
+            Destroy(this.gameObject);
+        }
+
+        if (collision.gameObject.tag == "wall")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

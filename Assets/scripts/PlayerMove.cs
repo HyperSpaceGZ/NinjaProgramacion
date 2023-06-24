@@ -9,6 +9,8 @@ public class PlayerMove : MonoBehaviour
     private Animator animator;
     private Vector2 movement;
 
+    private int playerhalth;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,5 +40,36 @@ public class PlayerMove : MonoBehaviour
     {
         // Apply movement using Rigidbody
         rb.velocity = movement * moveSpeed;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            PlayerLooseHP();
+        }
+
+        if (collision.gameObject.tag == "enemybullet")
+        {
+            PlayerLooseHP();
+        }
+
+        if (collision.gameObject.tag == "EnemyMonsterAttack")
+        {
+            PlayerLooseHP();
+            PlayerLooseHP();
+        }
+
+        if (collision.gameObject.tag == "EnemyElite")
+        {
+            PlayerLooseHP();
+            PlayerLooseHP();
+        }
+    }
+
+
+    public void PlayerLooseHP()
+    {
+        playerhalth--;
     }
 }
