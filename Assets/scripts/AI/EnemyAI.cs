@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private Transform PlayerTransform;
-    [SerializeField] private NavMeshAgent EnemyNavMesh;
-    [SerializeField] private bool hastriggered;
+    [SerializeField] protected NavMeshAgent EnemyNavMesh;
+    [SerializeField] protected bool hastriggered;
 
     [SerializeField] protected Animator animator; 
 
@@ -19,7 +19,6 @@ public class EnemyAI : MonoBehaviour
         if (hastriggered == false && collision.gameObject.tag == "Player")
         {
             hastriggered = true;
-            animator.SetBool("IsWalking", true);
             InvokeRepeating("EnemyFollowerMovement", 0f, 0.02f);
         }
     }
@@ -29,6 +28,7 @@ public class EnemyAI : MonoBehaviour
     {
         //Set Enemy destionation to the player's position
         EnemyNavMesh.SetDestination(PlayerTransform.position);
+        animator.SetBool("IsWalking", true);
     }
 
     public void NavMeshStart()
