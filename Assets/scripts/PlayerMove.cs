@@ -13,8 +13,9 @@ public class PlayerMove : MonoBehaviour
 
 
     //power Up
-    public GameObject DobleShootCanyon;
+    public GameObject DoubleShootCanyon;
     private bool isDoubleShootActive = false;
+    public float DoubleShootTime = 10f;
 
 
 
@@ -77,7 +78,7 @@ public class PlayerMove : MonoBehaviour
             PlayerLooseHP();
         }
 
-        // get power up
+        // get power up double shoot
         if(collision.gameObject.CompareTag("PowerUp"))
         {
             ActivateDoubleShootCanyon();
@@ -95,10 +96,10 @@ public class PlayerMove : MonoBehaviour
 
     IEnumerator ActivateAndDeactivateObjectCoroutine()
     {
-        DobleShootCanyon.SetActive(true);
+        DoubleShootCanyon.SetActive(true);
         isDoubleShootActive = true;
-        yield return new WaitForSeconds(10f);
-        DobleShootCanyon.SetActive(false);
+        yield return new WaitForSeconds(DoubleShootTime);
+        DoubleShootCanyon.SetActive(false);
         isDoubleShootActive = false;
     }
 
