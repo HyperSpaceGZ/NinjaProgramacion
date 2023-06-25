@@ -11,6 +11,13 @@ public class PlayerMove : MonoBehaviour
 
     private int playerhalth;
 
+
+    //power Up
+    public GameObject DobleShootCanyon;
+    private bool isDoubleShootActive = false;
+
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,6 +41,10 @@ public class PlayerMove : MonoBehaviour
 
         // Set the "isMoving" parameter in the Animator controller
         animator.SetBool("isMoving", movement.magnitude > 0f);
+
+
+        //doble shot
+        
     }
 
     private void FixedUpdate()
@@ -65,6 +76,30 @@ public class PlayerMove : MonoBehaviour
             PlayerLooseHP();
             PlayerLooseHP();
         }
+
+        // get power up
+        if(collision.gameObject.CompareTag("PowerUp"))
+        {
+            ActivateDoubleShootCanyon();
+            Destroy(collision.gameObject);
+        }
+    }
+
+    void ActivateDoubleShootCanyon()
+    {
+        if (!isDoubleShootActive)
+        {
+            StartCoroutine(ActivateAndDeactivateObjectCoroutine());
+        }
+    }
+
+    IEnumerator ActivateAndDeactivateObjectCoroutine()
+    {
+        DobleShootCanyon.SetActive(true);
+        isDoubleShootActive = true;
+        yield return new WaitForSeconds(10f);
+        DobleShootCanyon.SetActive(false);
+        isDoubleShootActive = false;
     }
 
 
