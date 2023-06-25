@@ -12,10 +12,15 @@ public class PlayerMove : MonoBehaviour
     private int playerhalth;
 
 
-    //power Up
+    //power Up DoubleShoot
     public GameObject DoubleShootCanyon;
     private bool isDoubleShootActive = false;
     public float DoubleShootTime = 10f;
+
+    //power up FourShoot
+    public GameObject[] FourCanyons;
+    private bool isFourShootActive = false;
+    public float FourShootTime = 10f;
 
 
 
@@ -84,8 +89,17 @@ public class PlayerMove : MonoBehaviour
             ActivateDoubleShootCanyon();
             Destroy(collision.gameObject);
         }
+
+        // get power up four shoots
+        if (collision.gameObject.CompareTag("FourShoots"))
+        {
+            ActivateFourShootCantons();
+            Destroy(collision.gameObject);
+        }
     }
 
+
+    //power ups corutines
     void ActivateDoubleShootCanyon()
     {
         if (!isDoubleShootActive)
@@ -94,13 +108,42 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    void ActivateFourShootCantons()
+    {
+        if (!isFourShootActive)
+        {
+            StartCoroutine(ActivateAndDeactivateObjectFour());
+        }
+    }
+
+     
     IEnumerator ActivateAndDeactivateObjectCoroutine()
     {
+        //double shoot
         DoubleShootCanyon.SetActive(true);
         isDoubleShootActive = true;
         yield return new WaitForSeconds(DoubleShootTime);
         DoubleShootCanyon.SetActive(false);
         isDoubleShootActive = false;
+
+
+    }
+    IEnumerator ActivateAndDeactivateObjectFour()
+    {
+        //four shoots
+        foreach (GameObject cannon in FourCanyons)
+        {
+            cannon.SetActive(true);
+        }
+        isFourShootActive = true;
+        yield return new WaitForSeconds(FourShootTime); 
+        foreach (GameObject cannon in FourCanyons)
+        {
+            cannon.SetActive(false);
+        }
+        isFourShootActive = false;
+
+
     }
 
 

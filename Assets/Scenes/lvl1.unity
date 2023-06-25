@@ -20301,6 +20301,9 @@ Transform:
   m_Children:
   - {fileID: 1251301373}
   - {fileID: 1140920767}
+  - {fileID: 762843931}
+  - {fileID: 2080242259}
+  - {fileID: 525856859}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -360}
@@ -20319,6 +20322,11 @@ MonoBehaviour:
   moveSpeed: 5
   DoubleShootCanyon: {fileID: 1140920766}
   DoubleShootTime: 15
+  FourCanyons:
+  - {fileID: 762843930}
+  - {fileID: 2080242258}
+  - {fileID: 525856858}
+  FourShootTime: 10
 --- !u!95 &462567064
 Animator:
   serializedVersion: 5
@@ -20411,71 +20419,102 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.68005604, y: 0.82225335}
   m_EdgeRadius: 0
---- !u!1001 &1044275661
-PrefabInstance:
+--- !u!1 &525856858
+GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5811387743114147625, guid: ece9528e2a22b2d43a9dc91b2366bd67, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811387743114147625, guid: ece9528e2a22b2d43a9dc91b2366bd67, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.4236603
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811387743114147625, guid: ece9528e2a22b2d43a9dc91b2366bd67, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.22093669
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811387743114147625, guid: ece9528e2a22b2d43a9dc91b2366bd67, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811387743114147625, guid: ece9528e2a22b2d43a9dc91b2366bd67, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811387743114147625, guid: ece9528e2a22b2d43a9dc91b2366bd67, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811387743114147625, guid: ece9528e2a22b2d43a9dc91b2366bd67, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811387743114147625, guid: ece9528e2a22b2d43a9dc91b2366bd67, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811387743114147625, guid: ece9528e2a22b2d43a9dc91b2366bd67, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811387743114147625, guid: ece9528e2a22b2d43a9dc91b2366bd67, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811387743114147625, guid: ece9528e2a22b2d43a9dc91b2366bd67, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8718392205419777753, guid: ece9528e2a22b2d43a9dc91b2366bd67, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861535417859844913, guid: ece9528e2a22b2d43a9dc91b2366bd67, type: 3}
-      propertyPath: m_Name
-      value: DoubleShootPowerUp
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ece9528e2a22b2d43a9dc91b2366bd67, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 525856859}
+  - component: {fileID: 525856860}
+  m_Layer: 0
+  m_Name: FourShoot3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &525856859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525856858}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.7, y: -0.07, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 462567062}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &525856860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525856858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449e9a92b84a7404da7288ca98ef0235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPosition: {fileID: 525856859}
+  bulletPrefab: {fileID: 7908906503385069930, guid: ffdee440d3df72f4bb06273cf4749111, type: 3}
+  bulletForce: 20
+  bulletLifetime: 0.5
+--- !u!1 &762843930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 762843931}
+  - component: {fileID: 762843932}
+  m_Layer: 0
+  m_Name: FourShoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &762843931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762843930}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.089999974, y: -0.7999999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 462567062}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &762843932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762843930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449e9a92b84a7404da7288ca98ef0235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPosition: {fileID: 762843931}
+  bulletPrefab: {fileID: 7908906503385069930, guid: ffdee440d3df72f4bb06273cf4749111, type: 3}
+  bulletForce: 20
+  bulletLifetime: 0.5
 --- !u!1 &1140920766
 GameObject:
   m_ObjectHideFlags: 0
@@ -21149,3 +21188,51 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2080242258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2080242259}
+  - component: {fileID: 2080242260}
+  m_Layer: 0
+  m_Name: FourShoot2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2080242259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080242258}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.7, y: -0.06999996, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 462567062}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &2080242260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080242258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449e9a92b84a7404da7288ca98ef0235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPosition: {fileID: 2080242259}
+  bulletPrefab: {fileID: 7908906503385069930, guid: ffdee440d3df72f4bb06273cf4749111, type: 3}
+  bulletForce: 20
+  bulletLifetime: 0.5

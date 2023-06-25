@@ -16,6 +16,7 @@ TagManager:
   - wall
   - PowerUp
   - DoubleShoot
+  - FourShoots
   layers:
   - Default
   - TransparentFX
