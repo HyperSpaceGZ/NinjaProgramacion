@@ -44,7 +44,7 @@ public class PlayerMove : MonoBehaviour
         animator.SetBool("isMoving", movement.magnitude > 0f);
 
 
-        //doble shot
+        
         
     }
 
@@ -79,7 +79,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         // get power up double shoot
-        if(collision.gameObject.CompareTag("PowerUp"))
+        if(collision.gameObject.CompareTag("DoubleShoot"))
         {
             ActivateDoubleShootCanyon();
             Destroy(collision.gameObject);

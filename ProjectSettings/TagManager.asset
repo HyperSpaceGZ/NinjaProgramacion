@@ -15,6 +15,7 @@ TagManager:
   - enemybullet
   - wall
   - PowerUp
+  - DoubleShoot
   layers:
   - Default
   - TransparentFX
