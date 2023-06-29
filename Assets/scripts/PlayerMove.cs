@@ -11,6 +11,19 @@ public class PlayerMove : MonoBehaviour
 
     private int playerhalth;
 
+
+    //power Up DoubleShoot
+    public GameObject DoubleShootCanyon;
+    private bool isDoubleShootActive = false;
+    public float DoubleShootTime = 10f;
+
+    //power up FourShoot
+    public GameObject[] FourCanyons;
+    private bool isFourShootActive = false;
+    public float FourShootTime = 10f;
+
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,6 +47,10 @@ public class PlayerMove : MonoBehaviour
 
         // Set the "isMoving" parameter in the Animator controller
         animator.SetBool("isMoving", movement.magnitude > 0f);
+
+
+        
+        
     }
 
     private void FixedUpdate()
@@ -65,6 +82,68 @@ public class PlayerMove : MonoBehaviour
             PlayerLooseHP();
             PlayerLooseHP();
         }
+
+        // get power up double shoot
+        if(collision.gameObject.CompareTag("DoubleShoot"))
+        {
+            ActivateDoubleShootCanyon();
+            Destroy(collision.gameObject);
+        }
+
+        // get power up four shoots
+        if (collision.gameObject.CompareTag("FourShoots"))
+        {
+            ActivateFourShootCantons();
+            Destroy(collision.gameObject);
+        }
+    }
+
+
+    //power ups corutines
+    void ActivateDoubleShootCanyon()
+    {
+        if (!isDoubleShootActive)
+        {
+            StartCoroutine(ActivateAndDeactivateObjectCoroutine());
+        }
+    }
+
+    void ActivateFourShootCantons()
+    {
+        if (!isFourShootActive)
+        {
+            StartCoroutine(ActivateAndDeactivateObjectFour());
+        }
+    }
+
+     
+    IEnumerator ActivateAndDeactivateObjectCoroutine()
+    {
+        //double shoot
+        DoubleShootCanyon.SetActive(true);
+        isDoubleShootActive = true;
+        yield return new WaitForSeconds(DoubleShootTime);
+        DoubleShootCanyon.SetActive(false);
+        isDoubleShootActive = false;
+
+
+    }
+    IEnumerator ActivateAndDeactivateObjectFour()
+    {
+        //four shoots
+        foreach (GameObject cannon in FourCanyons)
+        {
+            cannon.SetActive(true);
+        }
+        isFourShootActive = true;
+        yield return new WaitForSeconds(FourShootTime); 
+        foreach (GameObject cannon in FourCanyons)
+        {
+            cannon.SetActive(false);
+        }
+        isFourShootActive = false;
+
+
     }
 
 
