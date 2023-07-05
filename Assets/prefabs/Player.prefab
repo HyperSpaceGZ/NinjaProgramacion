@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4899976004310677551}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +194,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  DoubleShootCanyon: {fileID: 0}
+  DoubleShootTime: 10
+  FourCanyons: []
+  FourShootTime: 10
 --- !u!1 &3489806131117673286
 GameObject:
   m_ObjectHideFlags: 0

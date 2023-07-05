@@ -179,7 +179,7 @@ MonoBehaviour:
   EnemyNavMesh: {fileID: 0}
   hastriggered: 0
   animator: {fileID: 0}
-  enemyHP: 0
+  enemyHP: 20
   Spawner1: {fileID: 0}
   Spawner2: {fileID: 0}
   Spawner3: {fileID: 0}

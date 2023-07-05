@@ -11,7 +11,6 @@ public class PlayerMove : MonoBehaviour
 
     private int playerhalth;
 
-
     //power Up DoubleShoot
     public GameObject DoubleShootCanyon;
     private bool isDoubleShootActive = false;
@@ -21,8 +20,6 @@ public class PlayerMove : MonoBehaviour
     public GameObject[] FourCanyons;
     private bool isFourShootActive = false;
     public float FourShootTime = 10f;
-
-
 
     private void Awake()
     {
@@ -46,11 +43,7 @@ public class PlayerMove : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward); // Modify this line
 
         // Set the "isMoving" parameter in the Animator controller
-        animator.SetBool("isMoving", movement.magnitude > 0f);
-
-
-        
-        
+        animator.SetBool("isMoving", movement.magnitude > 0f);        
     }
 
     private void FixedUpdate()
@@ -115,8 +108,7 @@ public class PlayerMove : MonoBehaviour
             StartCoroutine(ActivateAndDeactivateObjectFour());
         }
     }
-
-     
+    
     IEnumerator ActivateAndDeactivateObjectCoroutine()
     {
         //double shoot
@@ -145,7 +137,6 @@ public class PlayerMove : MonoBehaviour
 
 
     }
-
 
     public void PlayerLooseHP()
     {

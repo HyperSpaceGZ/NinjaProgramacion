@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    [SerializeField] private Transform Spawner1;
-    [SerializeField] private Transform Spawner2;
-    [SerializeField] private Transform Spawner3;
-    [SerializeField] private Transform Spawner4;
-
     public float BulletSpawnedTime;
     public float BulletDespawnTime;
     void Update()
@@ -23,13 +17,20 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        DestroyBullet();
+        if (collision.gameObject.CompareTag("wall"))
+        {
+            DestroyBullet();
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            DestroyBullet();
+        }
+
     }
 
     private void DestroyBullet()
     {
         Destroy(this.gameObject);
     }
-
-
 }
