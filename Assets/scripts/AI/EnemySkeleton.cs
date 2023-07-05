@@ -18,12 +18,6 @@ public class EnemySkeleton : EnemyAI
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Collisions when is hits or hits the player
-        if (collision.gameObject.tag == "bullet")
-        {
-            enemyHP--;
-        }
-
         if (collision.gameObject.tag == "Player")
         {
             animator.SetBool("IsAttacking", true);   

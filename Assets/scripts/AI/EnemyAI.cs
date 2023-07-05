@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : MonoBehaviour, Ienemydmg
 {
     [SerializeField] private Transform PlayerTransform;
     [SerializeField] protected NavMeshAgent EnemyNavMesh;
@@ -46,6 +46,9 @@ public class EnemyAI : MonoBehaviour
         //Gets the players transform for the navigation AI
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
-    
 
+    public void EnemyDamage()
+    {
+        enemyHP--;
+    }
 }
