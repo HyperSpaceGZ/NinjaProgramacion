@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4216745108619657913}
   - component: {fileID: 5148989551982053767}
   - component: {fileID: 8700164427067467247}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Knight
   m_TagString: EnemyElite
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 5640023638555622296}
   - component: {fileID: 7821157272105126020}
   - component: {fileID: 4418134578122978515}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
