@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Ienemybulletdstry;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : MonoBehaviour, Ienemybulletdtry
 {
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 movement;
 
-    private int playerhalth;
+    public int playerhalth;
 
     //power Up DoubleShoot
     public GameObject DoubleShootCanyon;
@@ -54,28 +55,6 @@ public class PlayerMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            PlayerLooseHP();
-        }
-
-        if (collision.gameObject.tag == "enemybullet")
-        {
-            PlayerLooseHP();
-        }
-
-        if (collision.gameObject.tag == "EnemyMonsterAttack")
-        {
-            PlayerLooseHP();
-            PlayerLooseHP();
-        }
-
-        if (collision.gameObject.tag == "EnemyElite")
-        {
-            PlayerLooseHP();
-            PlayerLooseHP();
-        }
-
         // get power up double shoot
         if(collision.gameObject.CompareTag("DoubleShoot"))
         {
@@ -138,7 +117,7 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    public void PlayerLooseHP()
+    public void PlayerDmg() 
     {
         playerhalth--;
     }

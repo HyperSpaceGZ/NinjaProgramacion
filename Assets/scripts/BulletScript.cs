@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    private EnemyAI enemy;
-
-    //void Start()
-    //{
-        //enemy = GameObject.FindObjectOfType<EnemyAI>().EnemyDmg();
-    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

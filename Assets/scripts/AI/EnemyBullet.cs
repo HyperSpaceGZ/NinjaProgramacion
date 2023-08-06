@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Ienemybulletdstry;
 
 public class EnemyBullet : MonoBehaviour
 {
@@ -22,14 +23,15 @@ public class EnemyBullet : MonoBehaviour
             DestroyBullet();
         }
 
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.GetComponent<Ienemybulletdtry>() != null)
         {
+            collision.gameObject.GetComponent<Ienemybulletdtry>().PlayerDmg();
             DestroyBullet();
         }
 
     }
 
-    private void DestroyBullet()
+    public void DestroyBullet()
     {
         Destroy(this.gameObject);
     }

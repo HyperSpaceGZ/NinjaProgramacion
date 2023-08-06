@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static Ienemybulletdstry;
 
 public class EnemyAI : MonoBehaviour, Ienemydmg
 {
@@ -23,7 +24,16 @@ public class EnemyAI : MonoBehaviour, Ienemydmg
         }
     }
 
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<Ienemybulletdtry>() != null)
+        {
+            collision.gameObject.GetComponent<Ienemybulletdtry>().PlayerDmg();
+            Debug.Log("Log");
+        }
+    }
+
+
     private void EnemyFollowerMovement()
     {
         //Set Enemy destionation to the player's position
@@ -50,5 +60,9 @@ public class EnemyAI : MonoBehaviour, Ienemydmg
     public void EnemyDamage()
     {
         enemyHP--;
+        if(enemyHP <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
