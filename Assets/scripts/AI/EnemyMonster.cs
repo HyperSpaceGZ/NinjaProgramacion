@@ -34,8 +34,6 @@ public class EnemyMonster : EnemyAI
         }
     }
 
-
-
     private void GuardianAttack()
     {
         //Spawner1

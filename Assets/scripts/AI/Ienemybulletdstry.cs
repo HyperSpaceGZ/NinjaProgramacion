@@ -6,6 +6,6 @@ public class Ienemybulletdstry : MonoBehaviour
 {
     public interface Ienemybulletdtry
     {
-        void PlayerDmg();
+        public void PlayerDmg();
     }
 }

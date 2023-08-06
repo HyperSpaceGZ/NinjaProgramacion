@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 8420402618956309948}
   - component: {fileID: 2616022809095851809}
   - component: {fileID: 2317049912077296432}
+  - component: {fileID: 5865465706367190875}
   m_Layer: 19
   m_Name: Skeleton
   m_TagString: Enemy
@@ -139,7 +140,7 @@ Transform:
   m_Children:
   - {fileID: 8389464019296091408}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &4971508401043759339
 NavMeshAgent:
@@ -250,3 +251,30 @@ MonoBehaviour:
   hastriggered: 0
   animator: {fileID: 0}
   enemyHP: 8
+--- !u!50 &5865465706367190875
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6609569904253707181}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

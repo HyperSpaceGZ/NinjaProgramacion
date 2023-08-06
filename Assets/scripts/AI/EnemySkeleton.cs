@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Ienemybulletdstry;
 
 public class EnemySkeleton : EnemyAI
 {  
@@ -21,6 +22,11 @@ public class EnemySkeleton : EnemyAI
         if (collision.gameObject.tag == "Player")
         {
             animator.SetBool("IsAttacking", true);   
+        }
+
+        if(collision.gameObject.GetComponent<Ienemybulletdtry>() != null)
+        {
+            collision.gameObject.GetComponent<Ienemybulletdtry>().PlayerDmg();
         }
     }
 

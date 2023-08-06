@@ -24,16 +24,6 @@ public class EnemyAI : MonoBehaviour, Ienemydmg
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.GetComponent<Ienemybulletdtry>() != null)
-        {
-            collision.gameObject.GetComponent<Ienemybulletdtry>().PlayerDmg();
-            Debug.Log("Log");
-        }
-    }
-
-
     private void EnemyFollowerMovement()
     {
         //Set Enemy destionation to the player's position
