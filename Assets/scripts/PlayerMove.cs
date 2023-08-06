@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Ienemybulletdstry;
+using static IhealPlayer;
 
-public class PlayerMove : MonoBehaviour, Ienemybulletdtry
+public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
 {
     public float moveSpeed = 5f;
     private Rigidbody2D rb;
@@ -21,6 +22,9 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry
     public GameObject[] FourCanyons;
     private bool isFourShootActive = false;
     public float FourShootTime = 10f;
+
+
+    
 
     private void Awake()
     {
@@ -120,5 +124,10 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry
     public void PlayerDmg() 
     {
         playerhalth--;
+    }
+
+    public void PlayerHealing()
+    {
+        playerhalth++;
     }
 }

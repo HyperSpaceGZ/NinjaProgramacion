@@ -20316,6 +20316,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  playerhalth: 5
+  DoubleShootCanyon: {fileID: 0}
+  DoubleShootTime: 10
+  FourCanyons: []
+  FourShootTime: 10
 --- !u!95 &462567064
 Animator:
   serializedVersion: 5

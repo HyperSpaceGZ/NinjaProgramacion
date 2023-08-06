@@ -17,6 +17,7 @@ TagManager:
   - PowerUp
   - DoubleShoot
   - FourShoots
+  - Heal
   layers:
   - Default
   - TransparentFX
