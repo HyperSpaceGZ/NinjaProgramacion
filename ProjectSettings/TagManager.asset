@@ -18,6 +18,7 @@ TagManager:
   - DoubleShoot
   - FourShoots
   - Heal
+  - UI
   layers:
   - Default
   - TransparentFX

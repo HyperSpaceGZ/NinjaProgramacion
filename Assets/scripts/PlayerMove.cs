@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using static Ienemybulletdstry;
 using static IhealPlayer;
 
@@ -23,8 +24,12 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
     private bool isFourShootActive = false;
     public float FourShootTime = 10f;
 
+    //UI
+    public GameObject[] Hearts;
+    public int HeartsNumber = 5;
 
-    
+
+
 
     private void Awake()
     {
@@ -124,10 +129,19 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
     public void PlayerDmg() 
     {
         playerhalth--;
+        //HeartLess();
     }
 
     public void PlayerHealing()
     {
         playerhalth++;
     }
+    
+    //public void HeartLess()
+    //{
+    //    for (int i = Hearts.Length - 1; i >= 0; i--)
+    //    {
+    //        Destroy(Hearts[i]); 
+    //    }
+    //}
 }
