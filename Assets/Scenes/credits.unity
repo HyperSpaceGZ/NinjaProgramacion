@@ -878,14 +878,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Jeremias Alonso (el  papu)
-
-
-    Tomas Alonso (amoguns rojo)
-
-
-    Alejandro
-    Biga (nasheman)'
+  m_text: "-Jeremias Alonso \n\n-Tomas Alonso \n\n-Alejandro Biga "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37999d584c3ece84b9ffb970f9656e36, type: 2}
   m_sharedMaterial: {fileID: 2508472395870360298, guid: 37999d584c3ece84b9ffb970f9656e36, type: 2}
