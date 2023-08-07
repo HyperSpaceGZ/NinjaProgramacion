@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,9 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
     private Vector2 movement;
 
     public int playerhalth;
+    //troleando
+    public int lifeRealTime;
+    public List<Image> hearts;
 
     //power Up DoubleShoot
     public GameObject DoubleShootCanyon;
@@ -24,9 +28,7 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
     private bool isFourShootActive = false;
     public float FourShootTime = 10f;
 
-    //UI
-    public GameObject[] Hearts;
-    public int HeartsNumber = 5;
+    
 
 
 
@@ -35,6 +37,9 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        //trrolling
+        lifeRealTime = playerhalth;
+        refreshUI();
     }
 
     private void Update()
@@ -53,7 +58,7 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
         transform.rotation = Quaternion.AngleAxis(angle - 90f, Vector3.forward); // Modify this line
 
         // Set the "isMoving" parameter in the Animator controller
-        animator.SetBool("isMoving", movement.magnitude > 0f);        
+        animator.SetBool("isMoving", movement.magnitude > 0f);
     }
 
     private void FixedUpdate()
@@ -65,7 +70,7 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // get power up double shoot
-        if(collision.gameObject.CompareTag("DoubleShoot"))
+        if (collision.gameObject.CompareTag("DoubleShoot"))
         {
             ActivateDoubleShootCanyon();
             Destroy(collision.gameObject);
@@ -96,7 +101,7 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
             StartCoroutine(ActivateAndDeactivateObjectFour());
         }
     }
-    
+
     IEnumerator ActivateAndDeactivateObjectCoroutine()
     {
         //double shoot
@@ -116,7 +121,7 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
             cannon.SetActive(true);
         }
         isFourShootActive = true;
-        yield return new WaitForSeconds(FourShootTime); 
+        yield return new WaitForSeconds(FourShootTime);
         foreach (GameObject cannon in FourCanyons)
         {
             cannon.SetActive(false);
@@ -126,22 +131,39 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
 
     }
 
-    public void PlayerDmg() 
+    public void PlayerDmg()
     {
+
+
         playerhalth--;
-        //HeartLess();
+
+        
+
+        lifeRealTime = Math.Clamp(lifeRealTime, 0, playerhalth);
+        refreshUI();
+        
+        
     }
 
     public void PlayerHealing()
     {
         playerhalth++;
     }
+
+    private void refreshUI()
+    {
+        for (int i = 0; i < hearts.Count; i++)
+        {
+            if(i < lifeRealTime)
+            {
+                hearts[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                hearts[i].gameObject.SetActive(false);
+            }
+        } 
+    }
+
     
-    //public void HeartLess()
-    //{
-    //    for (int i = Hearts.Length - 1; i >= 0; i--)
-    //    {
-    //        Destroy(Hearts[i]); 
-    //    }
-    //}
 }
