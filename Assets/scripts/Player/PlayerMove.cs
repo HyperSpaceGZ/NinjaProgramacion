@@ -29,7 +29,6 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
     private bool isFourShootActive = false;
     public float FourShootTime = 10f;
 
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -56,7 +55,6 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
         // Set the "isMoving" parameter in the Animator controller
         animator.SetBool("isMoving", movement.magnitude > 0f);
     }
-
     private void FixedUpdate()
     {
         // Apply movement using Rigidbody
@@ -67,7 +65,6 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
             SceneManager.LoadScene(4);
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // get power up double shoot
@@ -84,7 +81,6 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
             Destroy(collision.gameObject);
         }
     }
-
 
     //power ups corutines
     void ActivateDoubleShootCanyon()
