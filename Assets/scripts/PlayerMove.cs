@@ -156,10 +156,15 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
 
     public void PlayerHealing()
     {
-        playerhalth++;
-        lifeRealTime++;
-        lifeRealTime = Math.Clamp(lifeRealTime, 0, playerhalth);
-        refreshUI();
+        if (playerhalth < 5)
+        {
+            playerhalth++;
+            lifeRealTime++;
+            lifeRealTime = Math.Clamp(lifeRealTime, 0, playerhalth);
+            refreshUI();
+        }
+        
+        
     }
 
     
