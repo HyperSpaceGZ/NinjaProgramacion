@@ -49,6 +49,7 @@ public class EnemyAI : MonoBehaviour, Ienemydmg
 
     public void EnemyDamage()
     {
+        //Deals damage to the enemy, and if enemyHP is lower or equal to zero, it destroys the enemy
         enemyHP--;
         if(enemyHP <= 0)
         {

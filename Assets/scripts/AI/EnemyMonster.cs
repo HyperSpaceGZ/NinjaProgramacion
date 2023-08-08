@@ -15,6 +15,8 @@ public class EnemyMonster : EnemyAI
     void Start()
     {
         NavMeshStart();
+
+        //Gets the transform component for each empty to spawn all the bullets
         Spawner1 = transform.GetChild(1);
         Spawner2 = transform.GetChild(2);
         Spawner3 = transform.GetChild(3);
@@ -36,6 +38,8 @@ public class EnemyMonster : EnemyAI
 
     private void GuardianAttack()
     {
+        //Instantiates 4 ranged attacks from each empty object inside the Enemy
+        
         //Spawner1
         GameObject RangeAttackClone1 = Instantiate(RangeAttackObj, Spawner1.position, Spawner1.rotation);
         Rigidbody2D rb1 = RangeAttackClone1.GetComponent<Rigidbody2D>();
@@ -55,6 +59,8 @@ public class EnemyMonster : EnemyAI
         GameObject RangeAttackClone4 = Instantiate(RangeAttackObj, Spawner4.position, Spawner4.rotation);
         Rigidbody2D rb4 = RangeAttackClone4.GetComponent<Rigidbody2D>();
         rb4.AddRelativeForce(Vector3.up * RangeAttackForce, ForceMode2D.Impulse);
+
+        //Sets the animation
         animator.SetBool("IsAttacking", true);
     }
 

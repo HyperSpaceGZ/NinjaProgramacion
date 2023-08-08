@@ -11,19 +11,16 @@ public class EnemySkeleton : EnemyAI
         NavMeshStart();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Enemy Collisions
+        
         if (collision.gameObject.tag == "Player")
         {
             animator.SetBool("IsAttacking", true);   
         }
 
+        //Calls the PlayrDmg function from the Player Script 
         if(collision.gameObject.GetComponent<Ienemybulletdtry>() != null)
         {
             collision.gameObject.GetComponent<Ienemybulletdtry>().PlayerDmg();

@@ -9,6 +9,7 @@ public class EnemyBullet : MonoBehaviour
     public float BulletDespawnTime;
     void Update()
     {
+        //Sets a timer based on Delta Time to destroy the bullet
         BulletSpawnedTime += Time.deltaTime;
         if (BulletSpawnedTime >= BulletDespawnTime)
         {
@@ -18,6 +19,7 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //Enemy "Bullet" Collisions
         if (collision.gameObject.CompareTag("wall"))
         {
             DestroyBullet();
@@ -38,6 +40,7 @@ public class EnemyBullet : MonoBehaviour
 
     public void DestroyBullet()
     {
+        //Destroys the object
         Destroy(this.gameObject);
     }
 }

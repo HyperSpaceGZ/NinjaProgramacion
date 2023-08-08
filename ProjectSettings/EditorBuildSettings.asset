@@ -6,21 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/menu.unity
+    path: Assets/Scenes/NIVELES/menu.unity
     guid: f30799a6fdb24cf4faf1bc3d4137d55d
   - enabled: 1
-    path: Assets/Scenes/credits.unity
+    path: Assets/Scenes/NIVELES/credits.unity
     guid: 2b299d1e7857d534b8b4bff8b2cba8d7
   - enabled: 1
-    path: Assets/Scenes/NIVELES/lvl1.unity
+    path: Assets/Scenes/NIVELES/Tutorial.unity
     guid: b9940b0d99c0cd34f8f607d43494d9f1
   - enabled: 1
-    path: Assets/Scenes/NIVELES/main level.unity
+    path: Assets/Scenes/NIVELES/Level 1.unity
     guid: c76ab7a2ed5567e439acbcd69c0753db
   - enabled: 1
-    path: Assets/Scenes/NIVELES/Muerte.unity
+    path: Assets/Scenes/NIVELES/death.unity
     guid: d11e5d6573c42844ab0d71268056f6d5
   - enabled: 1
-    path: Assets/Scenes/NIVELES/Victoria.unity
+    path: Assets/Scenes/NIVELES/Victory.unity
     guid: aed1d04451992cb4985d539e1efdd175
   m_configObjects: {}
