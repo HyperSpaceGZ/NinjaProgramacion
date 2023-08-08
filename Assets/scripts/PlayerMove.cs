@@ -13,8 +13,8 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
     private Rigidbody2D rb;
     private Animator animator;
     private Vector2 movement;
-
     public int playerhalth;
+
     //hearts controller
     public int lifeRealTime;
     public List<Image> hearts;
@@ -29,18 +29,13 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
     private bool isFourShootActive = false;
     public float FourShootTime = 10f;
 
-    
-
-
-
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         //trrolling
-        lifeRealTime = playerhalth;
-        
+        lifeRealTime = playerhalth; 
     }
 
     private void Update()
@@ -66,9 +61,7 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
     {
         // Apply movement using Rigidbody
         rb.velocity = movement * moveSpeed;
-
         //death
-
         if (playerhalth <= 0)
         {
             SceneManager.LoadScene(4);
@@ -118,8 +111,6 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
         yield return new WaitForSeconds(DoubleShootTime);
         DoubleShootCanyon.SetActive(false);
         isDoubleShootActive = false;
-
-
     }
     IEnumerator ActivateAndDeactivateObjectFour()
     {
@@ -135,23 +126,14 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
             cannon.SetActive(false);
         }
         isFourShootActive = false;
-
-
     }
 
     public void PlayerDmg()
     {
-
-
         playerhalth--;
         lifeRealTime--;
-
-
-
         lifeRealTime = Math.Clamp(lifeRealTime, 0, playerhalth);
         refreshUI();
-        
-        
     }
 
     public void PlayerHealing()
@@ -162,9 +144,7 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
             lifeRealTime++;
             lifeRealTime = Math.Clamp(lifeRealTime, 0, playerhalth);
             refreshUI();
-        }
-        
-        
+        }  
     }
 
     
@@ -182,7 +162,5 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
                 hearts[i].gameObject.SetActive(false);
             }
         } 
-    }
-
-    
+    }  
 }
