@@ -23,6 +23,11 @@ public class EnemyBullet : MonoBehaviour
             DestroyBullet();
         }
 
+        if (collision.gameObject.CompareTag("Heal"))
+        {
+            DestroyBullet();
+        }
+
         if (collision.gameObject.GetComponent<Ienemybulletdtry>() != null)
         {
             collision.gameObject.GetComponent<Ienemybulletdtry>().PlayerDmg();
