@@ -40,7 +40,7 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
         animator = GetComponent<Animator>();
         //trrolling
         lifeRealTime = playerhalth;
-        refreshUI();
+        
     }
 
     private void Update()
@@ -144,8 +144,9 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
 
 
         playerhalth--;
+        lifeRealTime--;
 
-        
+
 
         lifeRealTime = Math.Clamp(lifeRealTime, 0, playerhalth);
         refreshUI();
@@ -156,6 +157,9 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
     public void PlayerHealing()
     {
         playerhalth++;
+        lifeRealTime++;
+        lifeRealTime = Math.Clamp(lifeRealTime, 0, playerhalth);
+        refreshUI();
     }
 
     
