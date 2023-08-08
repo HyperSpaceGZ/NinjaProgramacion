@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static Ienemybulletdstry;
 using static IhealPlayer;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
 {
@@ -14,7 +15,7 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
     private Vector2 movement;
 
     public int playerhalth;
-    //troleando
+    //hearts controller
     public int lifeRealTime;
     public List<Image> hearts;
 
@@ -65,6 +66,13 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
     {
         // Apply movement using Rigidbody
         rb.velocity = movement * moveSpeed;
+
+        //death
+
+        if (playerhalth <= 0)
+        {
+            SceneManager.LoadScene(4);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -149,6 +157,8 @@ public class PlayerMove : MonoBehaviour, Ienemybulletdtry, Ihealplayer
     {
         playerhalth++;
     }
+
+    
 
     private void refreshUI()
     {
